@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo das Figurinhas - Copa do Mundo 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-trophy"></i>
+                <h1>Mundo das Figurinhas</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#promocoes">Promoções</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Colecionáveis da Copa do Mundo 2026</h2>
+            <p>As melhores figurinhas com os melhores preços</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">+5K</span>
+                    <span class="stat-label">Clientes Satisfeitos</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">🌍</span>
+                    <span class="stat-label">Entrega Brasil</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">✅</span>
+                    <span class="stat-label">Garantia 100%</span>
+                </div>
+            </div>
+            <button class="cta-button" onclick="document.getElementById('promocoes').scrollIntoView({behavior: 'smooth'})">Ver Promoções</button>
+        </div>
+        <div class="hero-image">
+            <div class="trophy-animation">
+                <i class="fas fa-trophy"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promoções Principais -->
+    <section id="promocoes" class="promotions">
+        <div class="promo-header">
+            <h2>🎯 Nossas Promoções Exclusivas</h2>
+            <p>Quanto mais você compra, mais economiza!</p>
+        </div>
+        <div class="promo-container">
+            <div class="promo-card promo-standard">
+                <div class="promo-badge">PADRÃO</div>
+                <div class="promo-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h3>Pacote Unitário</h3>
+                <div class="promo-highlight">
+                    <span class="promo-price">R$ 4,99</span>
+                    <span class="per-unit">por pacote</span>
+                </div>
+                <ul class="promo-features">
+                    <li>✓ 5 figurinhas por pacote</li>
+                    <li>✓ Frete rápido</li>
+                    <li>✓ 100% original</li>
+                </ul>
+                <button class="add-btn btn-standard" onclick="addToCart('Pacote Unitário', 4.99, 1)">Comprar Agora</button>
+            </div>
+
+            <div class="promo-card promo-popular">
+                <div class="promo-badge popular-badge">MAIS POPULAR</div>
+                <div class="promo-ribbon">🏆 MELHOR VALOR</div>
+                <div class="promo-icon">
+                    <i class="fas fa-box-open"></i>
+                </div>
+                <h3>Kit com 10 Pacotes</h3>
+                <div class="promo-highlight">
+                    <span class="promo-price">R$ 35,00</span>
+                    <span class="per-unit">R$ 3,50/pacote</span>
+                </div>
+                <div class="savings-badge">💰 Economize 30%</div>
+                <ul class="promo-features">
+                    <li>✓ 50 figurinhas total</li>
+                    <li>✓ Frete grátis</li>
+                    <li>✓ Garantia completa</li>
+                    <li>✓ Entrega em 3-5 dias</li>
+                </ul>
+                <button class="add-btn btn-popular" onclick="addToCart('Kit 10 Pacotes', 35.00, 10)">Comprar Agora</button>
+            </div>
+
+            <div class="promo-card promo-premium">
+                <div class="promo-badge premium-badge">PREMIUM</div>
+                <div class="promo-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3>Kit com 20 Pacotes</h3>
+                <div class="promo-highlight">
+                    <span class="promo-price">R$ 75,00</span>
+                    <span class="per-unit">R$ 3,75/pacote</span>
+                </div>
+                <div class="savings-badge">💰 Economize 25%</div>
+                <ul class="promo-features">
+                    <li>✓ 100 figurinhas total</li>
+                    <li>✓ Frete grátis priorizado</li>
+                    <li>✓ Suporte VIP</li>
+                    <li>✓ Entrega em 2-3 dias</li>
+                </ul>
+                <button class="add-btn btn-premium" onclick="addToCart('Kit 20 Pacotes', 75.00, 20)">Comprar Agora</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Por Que Escolher a Gente?</h2>
+                <div class="benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-truck-fast"></i>
+                        <h3>Entrega Rápida</h3>
+                        <p>Despachamos no mesmo dia e entregamos em 2-5 dias úteis</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>100% Seguro</h3>
+                        <p>Todos os produtos são originais com garantia completa</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-headset"></i>
+                        <h3>Suporte Dedicado</h3>
+                        <p>Atendimento via WhatsApp 24/7 para tirar dúvidas</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-star"></i>
+                        <h3>Melhor Preço</h3>
+                        <p>Promoções agressivas e descontos progressivos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section id="produtos" class="products">
+        <h2>📦 Nossos Pacotinhos</h2>
+        <p class="section-subtitle">Cada pacote contém 5 figurinhas diferentes</p>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #0052CC 0%, #0066FF 100%);">
+                    <span class="product-badge">⭐</span>
+                </div>
+                <h3>Pacote Premium</h3>
+                <p class="product-desc">Figurinhas selecionadas</p>
+                <div class="product-price">R$ 4,99</div>
+                <button class="buy-btn" onclick="addToCart('Pacote Premium', 4.99, 1)">Comprar</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #CC0000 0%, #FF3333 100%);">
+                    <span class="product-badge">🏆</span>
+                </div>
+                <h3>Pacote Ouro</h3>
+                <p class="product-desc">Com figurinhas raras</p>
+                <div class="product-price">R$ 4,99</div>
+                <button class="buy-btn" onclick="addToCart('Pacote Ouro', 4.99, 1)">Comprar</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #00AA44 0%, #00DD55 100%);">
+                    <span class="product-badge">💎</span>
+                </div>
+                <h3>Pacote Super</h3>
+                <p class="product-desc">Edição especial</p>
+                <div class="product-price">R$ 4,99</div>
+                <button class="buy-btn" onclick="addToCart('Pacote Super', 4.99, 1)">Comprar</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);">
+                    <span class="product-badge">✨</span>
+                </div>
+                <h3>Pacote Sorte</h3>
+                <p class="product-desc">Mistério - Pode ser raro!</p>
+                <div class="product-price">R$ 4,99</div>
+                <button class="buy-btn" onclick="addToCart('Pacote Sorte', 4.99, 1)">Comprar</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #9933FF 0%, #DD00FF 100%);">
+                    <span class="product-badge">⚡</span>
+                </div>
+                <h3>Pacote Power</h3>
+                <p class="product-desc">Dos melhores times</p>
+                <div class="product-price">R$ 4,99</div>
+                <button class="buy-btn" onclick="addToCart('Pacote Power', 4.99, 1)">Comprar</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background: linear-gradient(135deg, #FF6600 0%, #FFAA00 100%);">
+                    <span class="product-badge">🎁</span>
+                </div>
+                <h3>Pacote Surpresa</h3>
+                <p class="product-desc">Seleção única</p>
+                <div class="product-price">R$ 4,99</div>
+                <button class="buy-btn" onclick="addToCart('Pacote Surpresa', 4.99, 1)">Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section class="how-it-works">
+        <h2>Como Funciona</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Escolha</h3>
+                <p>Selecione os pacotes que deseja</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Carrinho</h3>
+                <p>Adicione ao carrinho e revise</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Pagamento</h3>
+                <p>Finalize pelo WhatsApp</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Receba</h3>
+                <p>Entrega rápida e segura</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contact">
+        <h2>📞 Entre em Contato</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-whatsapp"></i>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/55" target="_blank">Clique para conversar</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:contato@mundodasfigurinhas.com">contato@mundodasfigurinhas.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Atendimento</h3>
+                        <p>Segunda a Sábado, 9h às 18h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrinho Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>🛒 Seu Carrinho</h2>
+            <div id="cart-items" class="cart-items"></div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">R$ 0,00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Economia:</span>
+                    <span id="savings" style="color: #00AA44; font-weight: 700;">R$ 0,00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="total">R$ 0,00</span>
+                </div>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Finalizar via WhatsApp</button>
+            <button class="continue-btn" onclick="closeCart()">Continuar Comprando</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Mundo das Figurinhas</h3>
+                <p>Sua melhor opção para colecionar figurinhas da Copa do Mundo 2026</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#promocoes">Promoções</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <div class="social-links">
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mundo das Figurinhas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
